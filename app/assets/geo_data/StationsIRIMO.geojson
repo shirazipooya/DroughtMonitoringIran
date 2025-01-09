@@ -24,7 +24,6 @@
 { "type": "Feature", "properties": { "St_ID": "99276", "St_Name": "Lahijan", "Province": "Gilan", "St_Lat": 37.194, "St_Lon": 50.016, "St_Ele": 34.2 }, "geometry": { "type": "Point", "coordinates": [ 50.016, 37.194 ] } },
 { "type": "Feature", "properties": { "St_ID": "40720", "St_Name": "Manjil", "Province": "Gilan", "St_Lat": 36.729, "St_Lon": 49.41, "St_Ele": 338.3 }, "geometry": { "type": "Point", "coordinates": [ 49.41, 36.729 ] } },
 { "type": "Feature", "properties": { "St_ID": "99281", "St_Name": "Masuleh", "Province": "Gilan", "St_Lat": 37.15, "St_Lon": 48.983, "St_Ele": 1081.0 }, "geometry": { "type": "Point", "coordinates": [ 48.983, 37.15 ] } },
-{ "type": "Feature", "properties": { "St_ID": "99272", "St_Name": "Rasht (agricultulal)", "Province": "Gilan", "St_Lat": 37.203, "St_Lon": 49.645, "St_Ele": 24.8 }, "geometry": { "type": "Point", "coordinates": [ 49.645, 37.203 ] } },
 { "type": "Feature", "properties": { "St_ID": "40709", "St_Name": "Astara", "Province": "Gilan", "St_Lat": 38.365, "St_Lon": 48.855, "St_Ele": -21.1 }, "geometry": { "type": "Point", "coordinates": [ 48.855, 38.365 ] } },
 { "type": "Feature", "properties": { "St_ID": "99249", "St_Name": "Talesh", "Province": "Gilan", "St_Lat": 37.839, "St_Lon": 48.897, "St_Ele": 7.0 }, "geometry": { "type": "Point", "coordinates": [ 48.897, 37.839 ] } },
 { "type": "Feature", "properties": { "St_ID": "40719", "St_Name": "Rasht", "Province": "Gilan", "St_Lat": 37.323, "St_Lon": 49.624, "St_Ele": -8.6 }, "geometry": { "type": "Point", "coordinates": [ 49.624, 37.323 ] } }
