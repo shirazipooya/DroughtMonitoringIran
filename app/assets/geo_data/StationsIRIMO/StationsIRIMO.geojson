@@ -1,0 +1,31 @@
+{
+"type": "FeatureCollection",
+"name": "StationsIRIMO",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "St_ID": "40759", "St_Name": "Sari", "Province": "Mazandaran", "St_Lat": 36.536, "St_Lon": 52.998, "St_Ele": 23.0 }, "geometry": { "type": "Point", "coordinates": [ 52.998, 36.536 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99306", "St_Name": "Bandar-e-amirabad", "Province": "Mazandaran", "St_Lat": 36.856, "St_Lon": 53.386, "St_Ele": -20.0 }, "geometry": { "type": "Point", "coordinates": [ 53.386, 36.856 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99357", "St_Name": "Baladeh", "Province": "Mazandaran", "St_Lat": 36.198, "St_Lon": 51.801, "St_Ele": 2120.0 }, "geometry": { "type": "Point", "coordinates": [ 51.801, 36.198 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99299", "St_Name": "Galugah", "Province": "Mazandaran", "St_Lat": 36.738, "St_Lon": 53.837, "St_Ele": -10.0 }, "geometry": { "type": "Point", "coordinates": [ 53.837, 36.738 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40737", "St_Name": "Gharakhil", "Province": "Mazandaran", "St_Lat": 36.487, "St_Lon": 52.108, "St_Ele": 14.7 }, "geometry": { "type": "Point", "coordinates": [ 52.108, 36.487 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40760", "St_Name": "Kiyasar", "Province": "Mazandaran", "St_Lat": 36.248, "St_Lon": 53.546, "St_Ele": 1294.3 }, "geometry": { "type": "Point", "coordinates": [ 53.546, 36.248 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99361", "St_Name": "Alasht", "Province": "Mazandaran", "St_Lat": 36.071, "St_Lon": 52.843, "St_Ele": 1805.0 }, "geometry": { "type": "Point", "coordinates": [ 52.843, 36.071 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99309", "St_Name": "Amol", "Province": "Mazandaran", "St_Lat": 36.479, "St_Lon": 52.468, "St_Ele": 23.7 }, "geometry": { "type": "Point", "coordinates": [ 52.468, 36.479 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99348", "St_Name": "Kojur", "Province": "Mazandaran", "St_Lat": 36.39, "St_Lon": 51.729, "St_Ele": 1550.0 }, "geometry": { "type": "Point", "coordinates": [ 51.729, 36.39 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99360", "St_Name": "Polsefid", "Province": "Mazandaran", "St_Lat": 36.104, "St_Lon": 53.062, "St_Ele": 610.0 }, "geometry": { "type": "Point", "coordinates": [ 53.062, 36.104 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40735", "St_Name": "Siahbisheh", "Province": "Mazandaran", "St_Lat": 36.231, "St_Lon": 51.303, "St_Ele": 1855.4 }, "geometry": { "type": "Point", "coordinates": [ 51.303, 36.231 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40736", "St_Name": "Babolsar", "Province": "Mazandaran", "St_Lat": 36.699, "St_Lon": 52.643, "St_Ele": -21.0 }, "geometry": { "type": "Point", "coordinates": [ 52.643, 36.699 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40734", "St_Name": "Nowshahr", "Province": "Mazandaran", "St_Lat": 36.661, "St_Lon": 51.466, "St_Ele": -20.9 }, "geometry": { "type": "Point", "coordinates": [ 51.466, 36.661 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40732", "St_Name": "Ramsar", "Province": "Mazandaran", "St_Lat": 36.905, "St_Lon": 50.684, "St_Ele": -20.0 }, "geometry": { "type": "Point", "coordinates": [ 50.684, 36.905 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40788", "St_Name": "Sari (dasht-e-naz airport)", "Province": "Mazandaran", "St_Lat": 36.64, "St_Lon": 53.195, "St_Ele": 16.7 }, "geometry": { "type": "Point", "coordinates": [ 53.195, 36.64 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40718", "St_Name": "Bandar-e-anzali", "Province": "Gilan", "St_Lat": 37.48, "St_Lon": 49.458, "St_Ele": -23.6 }, "geometry": { "type": "Point", "coordinates": [ 49.458, 37.48 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40805", "St_Name": "Jirandeh", "Province": "Gilan", "St_Lat": 36.708, "St_Lon": 49.802, "St_Ele": 1581.4 }, "geometry": { "type": "Point", "coordinates": [ 49.802, 36.708 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99268", "St_Name": "Kiyashahr", "Province": "Gilan", "St_Lat": 37.417, "St_Lon": 49.883, "St_Ele": -22.0 }, "geometry": { "type": "Point", "coordinates": [ 49.883, 37.417 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99276", "St_Name": "Lahijan", "Province": "Gilan", "St_Lat": 37.194, "St_Lon": 50.016, "St_Ele": 34.2 }, "geometry": { "type": "Point", "coordinates": [ 50.016, 37.194 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40720", "St_Name": "Manjil", "Province": "Gilan", "St_Lat": 36.729, "St_Lon": 49.41, "St_Ele": 338.3 }, "geometry": { "type": "Point", "coordinates": [ 49.41, 36.729 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99281", "St_Name": "Masuleh", "Province": "Gilan", "St_Lat": 37.15, "St_Lon": 48.983, "St_Ele": 1081.0 }, "geometry": { "type": "Point", "coordinates": [ 48.983, 37.15 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40709", "St_Name": "Astara", "Province": "Gilan", "St_Lat": 38.365, "St_Lon": 48.855, "St_Ele": -21.1 }, "geometry": { "type": "Point", "coordinates": [ 48.855, 38.365 ] } },
+{ "type": "Feature", "properties": { "St_ID": "99249", "St_Name": "Talesh", "Province": "Gilan", "St_Lat": 37.839, "St_Lon": 48.897, "St_Ele": 7.0 }, "geometry": { "type": "Point", "coordinates": [ 48.897, 37.839 ] } },
+{ "type": "Feature", "properties": { "St_ID": "40719", "St_Name": "Rasht", "Province": "Gilan", "St_Lat": 37.323, "St_Lon": 49.624, "St_Ele": -8.6 }, "geometry": { "type": "Point", "coordinates": [ 49.624, 37.323 ] } }
+]
+}
