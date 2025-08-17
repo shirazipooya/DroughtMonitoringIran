@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "catboost>=1.2.8",
     "earthengine-api>=1.6.3",
     "fastparquet>=2024.11.0",
     "geopandas>=1.1.1",
