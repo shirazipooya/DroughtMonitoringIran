@@ -1,0 +1,5 @@
+GPM_SPI_9
+ERA5_SPI_9
+GPM_SPI_9_roll_mean_3
+PCI_GPM_roll_mean_6
+CI_GPM_roll_std_6

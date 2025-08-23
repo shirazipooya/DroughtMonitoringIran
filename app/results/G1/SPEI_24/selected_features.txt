@@ -1,0 +1,17 @@
+GPM_SPEI_24
+ERA5_SPEI_24
+ERA5_SPEI_24_lag_1
+ERA5_SPEI_24_lag_2
+ERA5_SPEI_24_lag_3
+GPM_SPEI_24_roll_std_3
+ERA5_SPEI_24_roll_mean_3
+VHI_roll_std_3
+GPM_Precipitation_roll_std_6
+GPM_SPEI_24_roll_std_6
+ERA5_SPEI_24_roll_mean_6
+PCI_GPM_roll_mean_6
+PCI_ERA5_roll_std_6
+VCI_roll_mean_6
+VHI_roll_mean_6
+VHI_roll_std_6
+CI_ERA5_roll_mean_6
