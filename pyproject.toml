@@ -10,6 +10,7 @@ dependencies = [
     "fastparquet>=2024.11.0",
     "geopandas>=1.1.1",
     "h5netcdf>=1.6.4",
+    "imbalanced-learn>=0.14.0",
     "imblearn>=0.0",
     "ipython>=9.4.0",
     "jupyterlab>=4.4.5",
