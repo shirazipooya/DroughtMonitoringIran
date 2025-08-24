@@ -1,0 +1,8 @@
+{
+    "n_estimators": 353,
+    "max_depth": 42,
+    "min_samples_split": 6,
+    "min_samples_leaf": 2,
+    "max_features": 0.4530071205906151,
+    "criterion": "gini"
+}
