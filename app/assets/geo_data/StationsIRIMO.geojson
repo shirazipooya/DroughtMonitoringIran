@@ -1,0 +1,31 @@
+{
+"type": "FeatureCollection",
+"name": "StationsIRIMO",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99361", "St_Name": "Alasht", "St_Lat": 36.071, "St_Lon": 52.843, "St_Ele": 1805.0 }, "geometry": { "type": "Point", "coordinates": [ 52.843, 36.071 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99309", "St_Name": "Amol", "St_Lat": 36.479, "St_Lon": 52.468, "St_Ele": 23.7 }, "geometry": { "type": "Point", "coordinates": [ 52.468, 36.479 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "18420", "St_Name": "Babolkenar", "St_Lat": 36.35, "St_Lon": 52.717, "St_Ele": 91.0 }, "geometry": { "type": "Point", "coordinates": [ 52.717, 36.35 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "40736", "St_Name": "Babolsar", "St_Lat": 36.699, "St_Lon": 52.643, "St_Ele": -21.0 }, "geometry": { "type": "Point", "coordinates": [ 52.643, 36.699 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99357", "St_Name": "Baladeh", "St_Lat": 36.198, "St_Lon": 51.801, "St_Ele": 2120.0 }, "geometry": { "type": "Point", "coordinates": [ 51.801, 36.198 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99306", "St_Name": "Bandar-E-Amirabad", "St_Lat": 36.856, "St_Lon": 53.386, "St_Ele": -20.0 }, "geometry": { "type": "Point", "coordinates": [ 53.386, 36.856 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "18389", "St_Name": "Bisheh Bone", "St_Lat": 36.567, "St_Lon": 53.816, "St_Ele": 1440.0 }, "geometry": { "type": "Point", "coordinates": [ 53.816, 36.567 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "18423", "St_Name": "Dalir", "St_Lat": 36.32306, "St_Lon": 51.10194, "St_Ele": 1995.0 }, "geometry": { "type": "Point", "coordinates": [ 51.10194, 36.32306 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99299", "St_Name": "Galugah", "St_Lat": 36.738, "St_Lon": 53.837, "St_Ele": -10.0 }, "geometry": { "type": "Point", "coordinates": [ 53.837, 36.738 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "40737", "St_Name": "Gharakhil", "St_Lat": 36.487, "St_Lon": 52.108, "St_Ele": 14.7 }, "geometry": { "type": "Point", "coordinates": [ 52.108, 36.487 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99308", "St_Name": "Izad Shahr", "St_Lat": 36.609, "St_Lon": 52.16, "St_Ele": -26.0 }, "geometry": { "type": "Point", "coordinates": [ 52.16, 36.609 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "18377", "St_Name": "Jouybar", "St_Lat": 36.69139, "St_Lon": 52.89667, "St_Ele": -17.0 }, "geometry": { "type": "Point", "coordinates": [ 52.89667, 36.69139 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "18410", "St_Name": "Kelardasht", "St_Lat": 36.55, "St_Lon": 51.157, "St_Ele": 1200.0 }, "geometry": { "type": "Point", "coordinates": [ 51.157, 36.55 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "40760", "St_Name": "Kiyasar", "St_Lat": 36.248, "St_Lon": 53.546, "St_Ele": 1294.3 }, "geometry": { "type": "Point", "coordinates": [ 53.546, 36.248 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99348", "St_Name": "Kojur", "St_Lat": 36.39, "St_Lon": 51.729, "St_Ele": 1550.0 }, "geometry": { "type": "Point", "coordinates": [ 51.729, 36.39 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "40734", "St_Name": "Nowshahr", "St_Lat": 36.661, "St_Lon": 51.466, "St_Ele": -20.9 }, "geometry": { "type": "Point", "coordinates": [ 51.466, 36.661 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99360", "St_Name": "Polsefid", "St_Lat": 36.104, "St_Lon": 53.062, "St_Ele": 610.0 }, "geometry": { "type": "Point", "coordinates": [ 53.062, 36.104 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "40732", "St_Name": "Ramsar", "St_Lat": 36.905, "St_Lon": 50.684, "St_Ele": -20.0 }, "geometry": { "type": "Point", "coordinates": [ 50.684, 36.905 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "99340", "St_Name": "Rineh", "St_Lat": 35.879, "St_Lon": 52.154, "St_Ele": 2130.0 }, "geometry": { "type": "Point", "coordinates": [ 52.154, 35.879 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "40759", "St_Name": "Sari", "St_Lat": 36.536, "St_Lon": 52.998, "St_Ele": 23.0 }, "geometry": { "type": "Point", "coordinates": [ 52.998, 36.536 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "40788", "St_Name": "Sari (Dasht-E-Naz Airport)", "St_Lat": 36.64, "St_Lon": 53.195, "St_Ele": 16.7 }, "geometry": { "type": "Point", "coordinates": [ 53.195, 36.64 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "18488", "St_Name": "Shayadehband Pay", "St_Lat": 36.317, "St_Lon": 52.553, "St_Ele": 213.0 }, "geometry": { "type": "Point", "coordinates": [ 52.553, 36.317 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "40735", "St_Name": "Siahbisheh", "St_Lat": 36.231, "St_Lon": 51.303, "St_Ele": 1855.4 }, "geometry": { "type": "Point", "coordinates": [ 51.303, 36.231 ] } },
+{ "type": "Feature", "properties": { "Province_ID": "MASA", "Province": "Mazandaran", "St_ID": "18332", "St_Name": "Tonekabon", "St_Lat": 36.81, "St_Lon": 50.9, "St_Ele": 0.0 }, "geometry": { "type": "Point", "coordinates": [ 50.9, 36.81 ] } }
+]
+}
