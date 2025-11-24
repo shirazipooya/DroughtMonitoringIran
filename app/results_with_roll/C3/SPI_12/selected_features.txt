@@ -1,9 +1,0 @@
-GPM_SPI_12
-ERA5_SPI_12
-GPM_SPI_12_lag_1
-GPM_SPI_12_roll_mean_3
-ERA5_SPI_12_roll_mean_3
-GPM_SPI_12_roll_std_6
-EVI_roll_std_6
-VCI_roll_mean_6
-TCI_roll_mean_6

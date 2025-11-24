@@ -1,0 +1,5 @@
+GPM_SPI_6
+PET_MOD16A2GF
+VHI_lag_2
+GPM_SPI_6_roll_mean_3
+CI_ERA5_roll_std_3

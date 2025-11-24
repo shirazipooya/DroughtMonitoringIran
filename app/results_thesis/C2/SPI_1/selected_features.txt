@@ -1,7 +1,0 @@
-GPM_SPI_1
-ERA5_SPI_1
-PCI_GPM
-PCI_ERA5
-TCI
-CI_GPM
-ERA5_Precipitation_lag_2

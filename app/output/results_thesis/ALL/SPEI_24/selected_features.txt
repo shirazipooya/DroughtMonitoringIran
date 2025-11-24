@@ -1,0 +1,14 @@
+GPM_SPEI_24
+ERA5_SPEI_24
+PET_MOD16A2GF
+GPM_Precipitation_lag_1
+GPM_SPEI_24_lag_1
+ERA5_SPEI_24_lag_1
+VCI_lag_1
+GPM_Precipitation_lag_2
+GPM_SPEI_24_lag_2
+ERA5_SPEI_24_lag_2
+TCI_lag_2
+GPM_SPEI_24_lag_3
+ERA5_SPEI_24_lag_3
+VCI_lag_3

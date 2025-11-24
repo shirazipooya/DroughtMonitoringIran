@@ -1,0 +1,8 @@
+GPM_SPEI_6
+ERA5_SPEI_6
+GPM_SPEI_6_roll_mean_3
+ERA5_SPEI_6_roll_mean_3
+GPM_Precipitation_roll_mean_6
+GPM_Precipitation_roll_std_6
+PCI_GPM_roll_mean_6
+PCI_ERA5_roll_mean_6

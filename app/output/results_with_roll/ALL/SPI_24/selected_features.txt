@@ -1,0 +1,5 @@
+GPM_SPI_24
+ERA5_SPI_24
+GPM_SPI_24_roll_mean_3
+GPM_SPI_24_roll_mean_6
+ERA5_SPI_24_roll_mean_6

@@ -1,0 +1,18 @@
+Overall Accuracy: 0.6634
+Macro-F1 Score: 0.2144
+Cohen's Kappa: 0.1734
+
+Classification Report:
+              precision    recall  f1-score   support
+
+          ED       0.00      0.00      0.00        13
+          EW       0.50      0.12      0.20         8
+          MD       0.00      0.00      0.00        16
+          MW       0.30      0.21      0.25        34
+          NN       0.73      0.92      0.81       205
+          SD       0.00      0.00      0.00         8
+          VW       0.29      0.21      0.24        19
+
+    accuracy                           0.66       303
+   macro avg       0.26      0.21      0.21       303
+weighted avg       0.56      0.66      0.60       303

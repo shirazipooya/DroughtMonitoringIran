@@ -1,8 +1,0 @@
-{
-    "n_estimators": 443,
-    "max_depth": 30,
-    "min_samples_split": 5,
-    "min_samples_leaf": 1,
-    "max_features": 0.9898816030720448,
-    "criterion": "entropy"
-}

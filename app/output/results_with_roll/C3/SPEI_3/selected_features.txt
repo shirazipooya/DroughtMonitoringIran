@@ -1,0 +1,11 @@
+GPM_SPEI_3
+ERA5_SPEI_3
+ERA5_Precipitation
+TCI_lag_3
+PCI_GPM_roll_mean_3
+PCI_GPM_roll_std_3
+GPM_Precipitation_roll_mean_6
+GPM_Precipitation_roll_std_6
+PCI_GPM_roll_mean_6
+TCI_roll_mean_6
+TCI_roll_std_6

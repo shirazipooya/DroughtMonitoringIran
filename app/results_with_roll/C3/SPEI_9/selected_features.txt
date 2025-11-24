@@ -1,3 +1,0 @@
-GPM_SPEI_9
-ERA5_SPEI_9
-GPM_SPEI_9_roll_mean_3

@@ -1,6 +1,0 @@
-ERA5_SPI_18
-NDVI
-GPM_SPI_18_lag_1
-ERA5_SPI_18_roll_mean_3
-PCI_ERA5_roll_mean_6
-VCI_roll_mean_6

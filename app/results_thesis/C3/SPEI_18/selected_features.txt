@@ -1,9 +1,0 @@
-ERA5_SPEI_18
-VCI
-GPM_Precipitation_lag_1
-ERA5_SPEI_18_lag_1
-ERA5_SPEI_18_lag_2
-VCI_lag_2
-ERA5_Precipitation_lag_3
-GPM_SPEI_18_lag_3
-VCI_lag_3

@@ -1,0 +1,12 @@
+GPM_SPI_3
+ERA5_SPI_3
+GPM_Precipitation
+LSTNight
+VCI
+CI_GPM
+GPM_SPI_3_lag_1
+ERA5_SPI_3_lag_1
+GPM_Precipitation_lag_2
+GPM_SPI_3_lag_2
+LSTNight_lag_2
+PCI_GPM_lag_2

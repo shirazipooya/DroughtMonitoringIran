@@ -1,7 +1,0 @@
-GPM_SPI_6
-ERA5_SPI_6
-ERA5_Precipitation
-NDVI
-LST_Diff
-GPM_SPI_6_lag_1
-GPM_SPI_6_lag_2

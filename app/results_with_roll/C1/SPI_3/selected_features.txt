@@ -1,6 +1,0 @@
-GPM_SPI_3
-ERA5_SPI_3
-LSTDay_lag_2
-GPM_SPI_3_roll_mean_3
-PCI_GPM_roll_mean_3
-PCI_GPM_roll_std_6
