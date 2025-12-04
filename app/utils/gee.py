@@ -118,6 +118,8 @@ def extract_points_to_csv(
             df["value"] = df["value"] * 24 * df["date"].apply(
                 lambda x: pd.Period(x, freq="M").days_in_month
             )
+        else:
+            pass
         if name:
             df.rename(columns={"value": f"{name}"}, inplace=True)
     else:
