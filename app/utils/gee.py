@@ -1,5 +1,6 @@
 import os
 import glob
+import tempfile
 import ee
 import geemap
 import geopandas as gpd
@@ -8,19 +9,22 @@ import xee
 import xarray as xr
 from pathlib import Path
 
-def extract_points_to_csv(image_collection_id: str, 
-                          start_date: str, 
-                          end_date: str, 
-                          parameter: str, 
-                          multiply: float = 1.0, 
-                          add: float = 0.0, 
-                          scale: float = None,
-                          unit: str = None,
-                          Cadence: str = None,
-                          name: str = None,
-                          points_shapefile: str = None, 
-                          points_geojson: str = None, 
-                          output_path: str = "output.csv") -> None:
+def extract_points_to_csv(
+    image_collection_id: str,
+    start_date: str,
+    end_date: str,
+    parameter: str,
+    multiply: float = 1.0,
+    add: float = 0.0,
+    scale: float | None = None,
+    unit: str | None = None,
+    Cadence: str | None = None,
+    name: str | None = None,
+    points_shapefile: str | None = None,
+    points_geojson: str | None = None,
+    output_path: str | None = "output.csv",
+    buffer_m: float | None = None,        
+) -> pd.DataFrame:
   
     if points_shapefile:
         points_fc = geemap.shp_to_ee(points_shapefile)
@@ -28,9 +32,17 @@ def extract_points_to_csv(image_collection_id: str,
         points_fc = geemap.geojson_to_ee(points_geojson)
     else:
         raise ValueError("A points_shapefile or points_geojson must be provided.")
-    
-    collection = ee.ImageCollection(image_collection_id).filterDate(start_date, end_date).select(parameter)
-    
+
+    if buffer_m is not None and buffer_m > 0:
+        points_fc = points_fc.map(lambda f: f.buffer(buffer_m))
+        reducer = ee.Reducer.mean().setOutputs(["value"])
+    else:
+        reducer = ee.Reducer.first().setOutputs(["value"])
+
+
+    raw_collection = ee.ImageCollection(image_collection_id).select(parameter)
+    collection = raw_collection.filterDate(start_date, end_date)
+        
     def daily_to_monthly_sum(col):
         def add_month(img):
             date = ee.Date(img.get("system:time_start"))
@@ -51,8 +63,7 @@ def extract_points_to_csv(image_collection_id: str,
             date = ee.Date.parse("YYYY-MM", m)
             return month_sum.set("system:time_start", date.millis())
 
-        monthly_ic = ee.ImageCollection(months.map(make_monthly_image))
-        return monthly_ic
+        return ee.ImageCollection(months.map(make_monthly_image))
     
     if Cadence == "1 Day":
         collection = daily_to_monthly_sum(collection)
@@ -63,14 +74,26 @@ def extract_points_to_csv(image_collection_id: str,
             scaled = ee.Image(img).multiply(multiply).add(add)
             return scaled.copyProperties(img, img.propertyNames())
         collection = collection.map(apply_scaling)
-    
+
+
+    if scale is not None:
+        base_scale = scale
+    else:
+        base_scale = (
+            ee.Image(raw_collection.first())
+            .projection()
+            .nominalScale()
+            .getInfo()
+        )
+    print(f"Using scale: {base_scale}, buffer_m: {buffer_m}")
+
+
     def image_to_points(image):
-        img_scale = scale if scale is not None else image.projection().nominalScale()
         img = ee.Image(image).select(parameter)
         values = img.reduceRegions(
             collection=points_fc,
-            reducer=ee.Reducer.first().setOutputs(["value"]),
-            scale=img_scale,
+            reducer=reducer,
+            scale=base_scale,
         )
         date_str = ee.Date(image.get("system:time_start")).format("YYYY-MM-dd")
         return values.map(lambda f: f.set("date", date_str))
@@ -84,17 +107,22 @@ def extract_points_to_csv(image_collection_id: str,
     result_fc = ee.FeatureCollection(fc_list).flatten()
     df = geemap.ee_to_df(result_fc)
     
-
-    
-    if unit == "mm/month":
-        df["value"] = df["value"]
-    elif unit == "mm/day":
-        df["value"] = df["value"] * df["date"].apply(lambda x: pd.Period(x, freq='M').days_in_month)
-    elif unit == "mm/hr":
-        df["value"] = df["value"] * 24 * df["date"].apply(lambda x: pd.Period(x, freq='M').days_in_month)
-    
-    if name:
-        df.rename(columns = {"value": f"{name}"}, inplace=True)
+    if "value" in df.columns:
+        if unit == "mm/month":
+            pass
+        elif unit == "mm/day":
+            df["value"] = df["value"] * df["date"].apply(
+                lambda x: pd.Period(x, freq="M").days_in_month
+            )
+        elif unit == "mm/hr":
+            df["value"] = df["value"] * 24 * df["date"].apply(
+                lambda x: pd.Period(x, freq="M").days_in_month
+            )
+        if name:
+            df.rename(columns={"value": f"{name}"}, inplace=True)
+    else:
+        if name and name not in df.columns:
+            df[name] = pd.NA
 
     if output_path:
         if output_path.lower().endswith(".xlsx"):
@@ -107,22 +135,26 @@ def extract_points_to_csv(image_collection_id: str,
 
 
 
-def run_with_adaptive_scale(
+def run_with_adaptive_buffer(
     config: dict,
     base_points_geojson: str,
-    scale_factors=None
+    buffer_list_m: list[float] | None = None,
 ) -> pd.DataFrame:
-    if scale_factors is None:
-        scale_factors = [2, 3, 4, 5, 7, 8, 9, 10, 15, 20]
-    col = ee.ImageCollection(config["image_collection_id"]) \
-        .filterDate(config["start_date"], config["end_date"]) \
-            .select(config["parameter"])
+    
+    if buffer_list_m is None:
+        buffer_list_m = [0, 5000, 10000, 20000] 
 
-    nominal_scale = col.first().projection().nominalScale().getInfo()
-    print("Nominal Scale:", nominal_scale)
+    raw_collection = ee.ImageCollection(config["image_collection_id"]).select(
+        config["parameter"]
+    )
+    nominal_scale = (
+        ee.Image(raw_collection.first())
+        .projection()
+        .nominalScale()
+        .getInfo()
+    )
+    print(f"Nominal scale for {config.get('name', config['parameter'])}: {nominal_scale}")
 
-    scales = [None] + [nominal_scale * f for f in scale_factors]
-    print("Scales to test:", scales)
     
     ID_COL = "St_ID"
     gdf_all = gpd.read_file(base_points_geojson)
@@ -133,68 +165,78 @@ def run_with_adaptive_scale(
     df_final: pd.DataFrame | None = None
     remaining_ids = set(station_ids)
 
-    for i, sc in enumerate(scales):
-        print(f"\n=== Try {i+1} with scale = {sc} ===")
+    for i, buf in enumerate(buffer_list_m):
+        print(f"\n=== Try {i+1} with buffer_m = {buf} m ===")
 
         gdf_sub = gdf_all[gdf_all[ID_COL].isin(remaining_ids)].copy()
         if gdf_sub.empty:
             print("No remaining stations with all-NaN. Done.")
             break
 
-        tmp_geojson = f"tmp_stations_scale_{sc or 'default'}.geojson"
+        with tempfile.NamedTemporaryFile(suffix=".geojson", delete=False) as tmp:
+            tmp_geojson = tmp.name
         gdf_sub.to_file(tmp_geojson, driver="GeoJSON")
 
-        df_sub = extract_points_to_csv(
-            image_collection_id=config["image_collection_id"],
-            start_date=config["start_date"],
-            end_date=config["end_date"],
-            parameter=config["parameter"],
-            multiply=config.get("multiply", 1.0),
-            add=config.get("add", 0.0),
-            scale=sc,
-            unit=config.get("unit"),
-            Cadence=config.get("Cadence"),
-            name=config.get("name"),
-            points_geojson=tmp_geojson,
-            points_shapefile=None,
-            output_path=None,
-        )
-        
         try:
-            os.remove(tmp_geojson)
-        except FileNotFoundError as e:
-            print("Could not delete temp file:", tmp_geojson, e)
+            df_sub = extract_points_to_csv(
+                image_collection_id=config["image_collection_id"],
+                start_date=config["start_date"],
+                end_date=config["end_date"],
+                parameter=config["parameter"],
+                multiply=config.get("multiply", 1.0),
+                add=config.get("add", 0.0),
+                scale=config.get("scale", None),
+                unit=config.get("unit"),
+                Cadence=config.get("Cadence"),
+                name=config.get("name"),
+                points_geojson=tmp_geojson,
+                points_shapefile=None,
+                output_path=None,
+                buffer_m=buf,
+            )
+        finally:
+            try:
+                os.remove(tmp_geojson)
+            except OSError:
+                pass
 
-        df_sub["date"] = pd.to_datetime(df_sub["date"])
+        if "date" in df_sub.columns:
+            df_sub["date"] = pd.to_datetime(df_sub["date"])
 
         if df_final is None:
             df_final = df_sub.copy()
         else:
-            df_final = (
-                df_final
-                .set_index(["date", ID_COL])
-                .combine_first(
-                    df_sub.set_index(["date", ID_COL])
+            if "date" in df_final.columns and "date" in df_sub.columns:
+                df_final = (
+                    df_final
+                    .set_index(["date", ID_COL])
+                    .combine_first(
+                        df_sub.set_index(["date", ID_COL])
+                    )
+                    .reset_index()
                 )
-                .reset_index()
-            )
+            else:
+                df_final = pd.concat([df_final, df_sub], ignore_index=True)
 
         remaining_ids = set()
-        for sid in station_ids:
-            mask = df_final[ID_COL] == sid
-            if not mask.any():
-                remaining_ids.add(sid)
-                continue
-            if df_final.loc[mask, value_col].isna().all():
-                remaining_ids.add(sid)
+        if df_final is not None and value_col in df_final.columns:
+            for sid in station_ids:
+                mask = df_final[ID_COL] == sid
+                if not mask.any():
+                    remaining_ids.add(sid)
+                    continue
+                if df_final.loc[mask, value_col].isna().all():
+                    remaining_ids.add(sid)
+        else:
+            remaining_ids = set(station_ids)
 
-        print(f"Stations still all-NaN after scale {sc}: {remaining_ids}")
+        print(f"Stations still all-NaN after buffer {buf} m: {remaining_ids}")
 
         if not remaining_ids:
             print("All stations have at least some non-NaN values. Stopping.")
             break
 
     if df_final is None:
-        raise RuntimeError("run_with_adaptive_scale: no data extracted.")
+        raise RuntimeError("run_with_adaptive_buffer: no data extracted.")
 
     return df_final
