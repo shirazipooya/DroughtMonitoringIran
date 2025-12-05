@@ -1,0 +1,55 @@
+selected_columns = [
+    'region_id',
+    'region_name',
+    'station_name',
+    'station_id',
+    'lat',
+    'lon',
+    'station_elevation',
+    'date',
+    'rrr24',
+    'Hargreaves',
+    'SPEI_1',
+    'SPEI_1_Class',
+    'GPM',
+    'MOD16A2GF',
+    'NDVI',
+    'EVI',
+    'LST_Day',
+    'LST_Night',
+    'LST',
+    'PCI_GPM',
+    'VCI',
+    'TCI',
+    'TCI_Day',
+    'TCI_Night',
+    'VHI',
+    'VHI_Day',
+    'VHI_Night',
+    'CI_GPM',
+    'GPM_SPEI_1_Class',
+]
+
+selected_stations = [
+    'Ramsar',
+    'Nowshahr',
+    'Siahbisheh',
+    'Kiyasar',
+    'Kojur',
+    'Baladeh',
+    'Alasht',
+    'Babolsar',
+    'Gharakhil',
+    'Sari',
+    'Sari (dasht-e-naz airport)',
+    'Galugah',
+    'Bandar-e-amirabad',
+    'Amol',
+    'Polsefid'
+]
+
+start_date = '2006-09'
+end_date = '2025-09'
+
+SPEI_CLASS = ['ED', 'SD', 'MD', 'NN', 'MW', 'VW', 'EW']
+SPEI_RANGE = [-10, -2, -1.5, -1, 1, 1.5, 2, 10]
