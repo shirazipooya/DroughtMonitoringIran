@@ -9,6 +9,8 @@ Evaluation of MODIS and TRMM Satellite Data for Drought Monitoring in Mazandaran
 - gee_pet_monthly
 - gee_di_monthly
 - gee_indices_monthly
+- data
+- clustering_stations
 
 # Todos
 <input type="checkbox" checked> 00_Ground_Data_Cleansing  
@@ -18,3 +20,8 @@ Evaluation of MODIS and TRMM Satellite Data for Drought Monitoring in Mazandaran
 <input type="checkbox" checked> 04_GEE_PET
 <input type="checkbox" checked> 05_GEE_SPI_SPEI
 <input type="checkbox" checked> 06_GEE_Indices
+<input type="checkbox" checked> 07_Combine_Data
+<input type="checkbox" checked> 08_Clustering_Stations
+<input type="checkbox" checked> 09_Precipitation_Analysis
+<input type="checkbox" checked> 10_SPEI_SPI_Analysis
+
